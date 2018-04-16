@@ -199,6 +199,7 @@ APRIORI DXE {
 # DXE Phase modules
 #
 INF  MdeModulePkg/Core/Dxe/DxeMain.inf
+INF  OvmfPkg/DebugAllocatePool/MemHook.inf
 
 INF  MdeModulePkg/Universal/ReportStatusCodeRouter/RuntimeDxe/ReportStatusCodeRouterRuntimeDxe.inf
 INF  MdeModulePkg/Universal/StatusCodeHandler/RuntimeDxe/StatusCodeHandlerRuntimeDxe.inf

@@ -1,0 +1,60 @@
+## @file
+# Module Information file for the PolicyInit DXE driver.
+#
+# @copyright
+# Copyright (c) 2013 - 2015 Intel Corporation. All rights reserved
+# This software and associated documentation (if any) is furnished
+# under a license and may only be used or copied in accordance
+# with the terms of the license. Except as permitted by the
+# license, no part of this software or documentation may be
+# reproduced, stored in a retrieval system, or transmitted in any
+# form or by any means without the express written consent of
+# Intel Corporation.
+# This file contains a 'Sample Driver' and is licensed as such
+# under the terms of your license agreement with Intel or your
+# vendor. This file may be modified by the user, subject to
+# the additional terms of the license agreement.
+# 
+# @par Specification Reference:
+#
+##
+
+
+[Defines]
+INF_VERSION = 0x00010017
+BASE_NAME = MemHookDxe
+FILE_GUID = 84132d7c-2791-4abc-8abc-bc8f1b3ab0d9
+VERSION_STRING = 1.0
+MODULE_TYPE = DXE_DRIVER
+ENTRY_POINT = DriverEntryPoint
+
+
+[LibraryClasses]
+BaseLib
+DebugLib
+SerialPortLib
+UefiBootServicesTableLib
+UefiDriverEntryPoint
+UefiLib
+SynchronizationLib
+
+[Packages]
+MdePkg/MdePkg.dec
+IntelFrameworkPkg/IntelFrameworkPkg.dec
+
+[Sources]
+Driver.c
+Driver.h
+
+[Protocols]
+gEfiLoadedImageProtocolGuid ## CONSUMES
+gEfiFirmwareVolumeProtocolGuid
+gEfiFirmwareVolume2ProtocolGuid
+
+[Depex]
+TRUE
+
+[BuildOptions]
+ #*_*_ *_CC_FLAGS = -UMDEPKG_NDEBUG
+  MSFT:*_*_*_CC_FLAGS = /UMDEPKG_NDEBUG
+
